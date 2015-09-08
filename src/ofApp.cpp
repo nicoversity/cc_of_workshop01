@@ -74,9 +74,9 @@ void ofApp::keyPressed(int key){
     pressedKey = key;
     keyIsPressed = true;
     
-    // press spacebar (32): toogle between ball's moving state
+    // press spacebar (32): toggle between ball's moving state
     if (key == 32) {
-        ball.isMoving = !ball.isMoving;   // toogle moving state back and forth between true and false
+        if (!ball.isFollowing) ball.isMoving = !ball.isMoving;   // toggle moving state back and forth between true and false, in case the ball is currently not following the mouse
     }
     
     // alternative to handle keyboard input via "switch" instead of "if"
@@ -103,7 +103,11 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+    
+    // move ball to mouse pointer's position
+    if (ball.isFollowing) {
+        ball.moveTo(x, y);
+    }
 }
 
 //--------------------------------------------------------------
@@ -113,7 +117,20 @@ void ofApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+    
+    // only toggle mouse following state if the ball is currently not moving
+    if (!ball.isMoving) {
+        
+        // calculate distance between mouse click and ball
+        float distance = ofDist(ball.x, ball.y, x, y);
+        
+        // if distance is less than the ball's radius: clicked inside the ball
+        if (distance < ball.radius) {
+            
+            // toggle between mouse following state
+            ball.isFollowing = !ball.isFollowing;
+        }
+    }
 }
 
 //--------------------------------------------------------------

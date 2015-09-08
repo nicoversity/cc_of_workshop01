@@ -9,10 +9,11 @@ public:
     // public properties
     //
     
-    int x;          // x coordinate of the ball's position
-    int y;          // y coordinate of the ball's position
-    int radius;     // radius of the ball
-    bool isMoving;  // indicates the moving state of the ball
+    int x;              // x coordinate of the ball's position
+    int y;              // y coordinate of the ball's position
+    int radius;         // radius of the ball
+    bool isMoving;      // indicates the moving state of the ball
+    bool isFollowing;   // indicates if the ball is currently following the mouse
     
     // public functions
     //

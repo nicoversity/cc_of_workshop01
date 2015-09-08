@@ -2,10 +2,11 @@
 
 Ball::Ball()
 {
-    x = 300;            // initial x position of the ball
-    y = 200;            // initial y position of the ball
-    radius = 25;        // initial radius of the ball
-    isMoving = false;   // initial moving state
+    x = 300;                // initial x position of the ball
+    y = 200;                // initial y position of the ball
+    radius = 25;            // initial radius of the ball
+    isMoving = false;       // initial moving state
+    isFollowing = false;    // initial following state
 }
 
 
