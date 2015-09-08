@@ -31,16 +31,21 @@ void ofApp::update(){
         
         // calculate new x coordinate of the ball
         ballPosX += movementStep;
+        
+        // let the ball bounce between the application window's borders
+        // if ball's x position (considering its radius) is outside right border OR left border
+        if ( (ballPosX > ofGetWindowWidth() - ballRadius) || (ballPosX < 0 + ballRadius) )
+        {
+            movementStep *= -1;
+        }
     }
-
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     
     // set color, apply color "fill" flag for shapes, and draw the ball (circle) at the designated position with the designated radius
-    ofSetColor(255, 245
-               , 0);
+    ofSetColor(255, 245, 0);
     ofFill();
     ofCircle(ballPosX, ballPosY, ballRadius);
 }
