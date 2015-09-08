@@ -1,11 +1,5 @@
 #include "ofApp.h"
 
-// ball related properties
-int ballPosX;       // x coordinate of the ball's position
-int ballPosY;       // y coordinate of the ball's position
-int ballRadius;     // radius of the ball
-bool ballIsMoving;  // indicates the moving state of the ball
-
 // overall helper values
 int movementStep;   // indicates the ball's movement step per update cycle
 int pressedKey;     // store the key (code) of the most recent pressed key of the keyboard
@@ -15,12 +9,6 @@ bool keyIsPressed;  // indicates, if currently a key is pressed
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    // initialize ball properties
-    ballPosX = 300;
-    ballPosY = 200;
-    ballRadius = 25;
-    ballIsMoving = false;
-    
     // initialize helper values
     movementStep = 4;
 }
@@ -29,14 +17,17 @@ void ofApp::setup(){
 void ofApp::update(){
     
     // if ball is supposed to move: update it's position
-    if (ballIsMoving) {
+    if (ball.isMoving) {
         
         // calculate new x coordinate of the ball
-        ballPosX += movementStep;
+        int newXPos = ball.x += movementStep;
+        
+        // move the ball
+        ball.moveTo(newXPos, ball.y);
         
         // let the ball bounce between the application window's borders
         // if ball's x position (considering its radius) is outside right border OR left border
-        if ( (ballPosX > ofGetWindowWidth() - ballRadius) || (ballPosX < 0 + ballRadius) )
+        if ( (ball.x > ofGetWindowWidth() - ball.radius) || (ball.x < 0 + ball.radius) )
         {
             movementStep *= -1;
         }
@@ -67,10 +58,8 @@ void ofApp::draw(){
     // draw application's (interactive) content
     //
     
-    // set color, apply color "fill" flag for shapes, and draw the ball (circle) at the designated position with the designated radius
-    ofSetColor(255, 245, 0);
-    ofFill();
-    ofCircle(ballPosX, ballPosY, ballRadius);
+    // draw the ball instance
+    ball.draw();
 }
 
 //--------------------------------------------------------------
@@ -85,7 +74,7 @@ void ofApp::keyPressed(int key){
     
     // press spacebar (32): toogle between ball's moving state
     if (key == 32) {
-        ballIsMoving = !ballIsMoving;   // toogle moving state back and forth between true and false
+        ball.isMoving = !ball.isMoving;   // toogle moving state back and forth between true and false
     }
 }
 
