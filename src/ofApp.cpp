@@ -2,7 +2,7 @@
 
 // overall helper values
 int movementStep;   // indicates the ball's movement step per update cycle
-int radiusStep;     // indicates step for decreasing/increasing the ball's radius
+int radiusStep;     // indicates the step for decreasing/increasing the ball's radius
 int pressedKey;     // store the key (code) of the most recent pressed key of the keyboard
 bool keyIsPressed;  // indicates, if currently a key is pressed
 
@@ -31,6 +31,7 @@ void ofApp::update(){
         // if ball's x position (considering its radius) is outside right border OR left border
         if ( (ball.x > ofGetWindowWidth() - ball.radius) || (ball.x < 0 + ball.radius) )
         {
+            // reverse movement direction
             movementStep *= -1;
         }
     }
@@ -74,12 +75,12 @@ void ofApp::keyPressed(int key){
     pressedKey = key;
     keyIsPressed = true;
     
-    // press spacebar (32): toggle between ball's moving state
+    // press spacebar (key code == 32): toggle between ball's moving state
     if (key == 32) {
         if (!ball.isFollowing) ball.isMoving = !ball.isMoving;   // toggle moving state back and forth between true and false, in case the ball is currently not following the mouse
     }
     
-    // alternative to handle keyboard input via "switch" instead of "if"
+    // alternative keyboard input handler: using "switch" instead of "if"
     // increase/decrease the ball's radius by pressing 'w' or 's' on the keyboard
     // Note: int key can be represented as char character via type cast
     switch (key) {
