@@ -2,6 +2,7 @@
 
 // overall helper values
 int movementStep;   // indicates the ball's movement step per update cycle
+int radiusStep;     // indicates step for decreasing/increasing the ball's radius
 int pressedKey;     // store the key (code) of the most recent pressed key of the keyboard
 bool keyIsPressed;  // indicates, if currently a key is pressed
 
@@ -11,6 +12,7 @@ void ofApp::setup(){
     
     // initialize helper values
     movementStep = 4;
+    radiusStep = 5;
 }
 
 //--------------------------------------------------------------
@@ -75,6 +77,20 @@ void ofApp::keyPressed(int key){
     // press spacebar (32): toogle between ball's moving state
     if (key == 32) {
         ball.isMoving = !ball.isMoving;   // toogle moving state back and forth between true and false
+    }
+    
+    // alternative to handle keyboard input via "switch" instead of "if"
+    // increase/decrease the ball's radius by pressing 'w' or 's' on the keyboard
+    // Note: int key can be represented as char character via type cast
+    switch (key) {
+        case 'w':
+            ball.radius += radiusStep;
+            break;
+        case 's':
+            ball.radius -= radiusStep;
+            break;
+        default:
+            break;
     }
 }
 
