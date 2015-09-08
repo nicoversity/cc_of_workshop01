@@ -7,7 +7,9 @@ int ballRadius;     // radius of the ball
 bool ballIsMoving;  // indicates the moving state of the ball
 
 // overall helper values
-int movementStep;
+int movementStep;   // indicates the ball's movement step per update cycle
+int pressedKey;     // store the key (code) of the most recent pressed key of the keyboard
+bool keyIsPressed;  // indicates, if currently a key is pressed
 
 
 //--------------------------------------------------------------
@@ -44,6 +46,27 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     
+    // draw some application feedback
+    //
+    
+    // set color: OF pink
+    ofSetColor(236, 50, 135);
+    
+    // draw the framerate (FPS, "frames per second")
+    ofDrawBitmapString(ofToString(ofGetFrameRate()) + "fps", 10, 15);
+    
+    // draw the mouse pointer's position
+    ofDrawBitmapString("Mouse x|y: " + ofToString(mouseX) + "|" + ofToString(mouseY), 110, 15);
+
+    // draw the pressed key (code), but only if a key is pressed
+    if (keyIsPressed) {
+        ofDrawBitmapString("Key: " + ofToString(pressedKey), 280, 15);
+    }
+    
+    
+    // draw application's (interactive) content
+    //
+    
     // set color, apply color "fill" flag for shapes, and draw the ball (circle) at the designated position with the designated radius
     ofSetColor(255, 245, 0);
     ofFill();
@@ -54,7 +77,11 @@ void ofApp::draw(){
 void ofApp::keyPressed(int key){
     
     // DEBUG: print out pressed key (code) to the console
-    cout << "Pressed key: " << key << endl;
+    //cout << "Pressed key: " << key << endl;
+    
+    // update key-related helper values
+    pressedKey = key;
+    keyIsPressed = true;
     
     // press spacebar (32): toogle between ball's moving state
     if (key == 32) {
@@ -64,7 +91,9 @@ void ofApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
-
+    
+    // update key-related helper value
+    keyIsPressed = false;
 }
 
 //--------------------------------------------------------------
