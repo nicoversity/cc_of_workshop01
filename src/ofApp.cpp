@@ -1,8 +1,18 @@
 #include "ofApp.h"
 
+// ball related properties
+int ballPosX;       // x coordinate of the ball's position
+int ballPosY;       // y coordinate of the ball's position
+int ballRadius;     // radius of the ball
+
+
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+    
+    // initialize ball properties
+    ballPosX = 300;
+    ballPosY = 200;
+    ballRadius = 25;
 }
 
 //--------------------------------------------------------------
@@ -12,7 +22,11 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-
+    
+    // set color, apply color "fill" flag for shapes, and draw the ball (circle) at the designated position with the designated radius
+    ofSetColor(255, 245, 0);
+    ofFill();
+    ofCircle(ballPosX, ballPosY, ballRadius);
 }
 
 //--------------------------------------------------------------
