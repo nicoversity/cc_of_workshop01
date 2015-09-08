@@ -4,6 +4,10 @@
 int ballPosX;       // x coordinate of the ball's position
 int ballPosY;       // y coordinate of the ball's position
 int ballRadius;     // radius of the ball
+bool ballIsMoving;  // indicates the moving state of the ball
+
+// overall helper values
+int movementStep;
 
 
 //--------------------------------------------------------------
@@ -13,10 +17,21 @@ void ofApp::setup(){
     ballPosX = 300;
     ballPosY = 200;
     ballRadius = 25;
+    ballIsMoving = false;
+    
+    // initialize helper values
+    movementStep = 4;
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    
+    // if ball is supposed to move: update it's position
+    if (ballIsMoving) {
+        
+        // calculate new x coordinate of the ball
+        ballPosX += movementStep;
+    }
 
 }
 
@@ -24,14 +39,22 @@ void ofApp::update(){
 void ofApp::draw(){
     
     // set color, apply color "fill" flag for shapes, and draw the ball (circle) at the designated position with the designated radius
-    ofSetColor(255, 245, 0);
+    ofSetColor(255, 245
+               , 0);
     ofFill();
     ofCircle(ballPosX, ballPosY, ballRadius);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    
+    // DEBUG: print out pressed key (code) to the console
+    cout << "Pressed key: " << key << endl;
+    
+    // press spacebar (32): toogle between ball's moving state
+    if (key == 32) {
+        ballIsMoving = !ballIsMoving;   // toogle moving state back and forth between true and false
+    }
 }
 
 //--------------------------------------------------------------
