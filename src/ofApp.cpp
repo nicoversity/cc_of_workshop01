@@ -129,6 +129,9 @@ void ofApp::mousePressed(int x, int y, int button){
             
             // toggle between mouse following state
             ball.isFollowing = !ball.isFollowing;
+            
+            // change ball's color
+            ball.applyRandomColor();
         }
     }
 }

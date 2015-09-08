@@ -2,26 +2,34 @@
 
 Ball::Ball()
 {
-    x = 300;                // initial x position of the ball
-    y = 200;                // initial y position of the ball
-    radius = 25;            // initial radius of the ball
-    isMoving = false;       // initial moving state
-    isFollowing = false;    // initial following state
+    x = ofRandom(ofGetWindowWidth());   // initial x position of the ball
+    y = ofRandom(ofGetWindowHeight());  // initial y position of the ball
+    radius = ofRandom(10, 50);          // initial radius of the ball
+    applyRandomColor();                 // initial color (randomly)
+    isMoving = false;                   // initial moving state
+    isFollowing = false;                // initial following state
 }
 
 
 void Ball::draw()
 {
     // set color, apply color "fill" flag for shapes, and draw the ball (circle) at the designated position with the designated radius
-    ofSetColor(255, 245, 0);
+    ofSetColor(color);
     ofFill();
     ofCircle(x, y, radius);
 }
 
 
-void Ball::moveTo(int xDestiny, int yDestiny){
-    
+void Ball::moveTo(int xDestiny, int yDestiny)
+{
     // update ball position
     x = xDestiny;
     y = yDestiny;
+}
+
+
+void Ball::applyRandomColor()
+{
+    // set RGB color randomly
+    color.set(ofRandom(255), ofRandom(255), ofRandom(255));
 }

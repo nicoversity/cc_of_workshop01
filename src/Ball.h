@@ -12,6 +12,7 @@ public:
     int x;              // x coordinate of the ball's position
     int y;              // y coordinate of the ball's position
     int radius;         // radius of the ball
+    ofColor color;      // represents the ball's color
     bool isMoving;      // indicates the moving state of the ball
     bool isFollowing;   // indicates if the ball is currently following the mouse
     
@@ -22,6 +23,7 @@ public:
     
     void draw();                                // draw the ball
     void moveTo(int xDestiny, int yDestiny);    // update position
+    void applyRandomColor();                    // changes the ball's color randomly
 };
 
 #endif
