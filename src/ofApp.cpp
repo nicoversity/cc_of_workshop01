@@ -1,3 +1,13 @@
+/*
+ * ofApp.cpp
+ *
+ * Project: Creative coding using openFrameworks - Workshop: An introduction to creative coding using openFrameworks
+ *
+ * Author: Nico Reski
+ * Web: http://reski.nicoversity.com
+ * Twitter: @nicoversity
+ */
+
 #include "ofApp.h"
 
 // overall helper values
@@ -103,7 +113,7 @@ void ofApp::keyReleased(int key){
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
+void ofApp::mouseMoved(int x, int y){
     
     // move ball to mouse pointer's position
     if (ball.isFollowing) {

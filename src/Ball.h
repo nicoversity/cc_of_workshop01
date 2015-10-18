@@ -1,3 +1,13 @@
+/*
+ * Ball.h
+ *
+ * Project: Creative coding using openFrameworks - Workshop: An introduction to creative coding using openFrameworks
+ *
+ * Author: Nico Reski
+ * Web: http://reski.nicoversity.com
+ * Twitter: @nicoversity
+ */
+
 #ifndef ball_h
 #define ball_h
 

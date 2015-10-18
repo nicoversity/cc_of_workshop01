@@ -1,3 +1,13 @@
+/*
+ * main.cpp
+ *
+ * Project: Creative coding using openFrameworks - Workshop: An introduction to creative coding using openFrameworks
+ *
+ * Author: Nico Reski
+ * Web: http://reski.nicoversity.com
+ * Twitter: @nicoversity
+ */
+
 #include "ofMain.h"
 #include "ofApp.h"
 
@@ -9,5 +19,4 @@ int main( ){
 	// can be OF_WINDOW or OF_FULLSCREEN
 	// pass in width and height too:
 	ofRunApp(new ofApp());
-
 }
