@@ -1,4 +1,4 @@
-# Creative coding using openFrameworks - Workshop 01: An introduction to creative coding using openFrameworks.
+# Creative coding using openFrameworks - Workshop: An introduction to creative coding using openFrameworks.
 
 The purpose of the project is to illustrate and teach some basic drawing and interaction features of the creative coding toolkit [openFrameworks](http://openframeworks.cc). This activity is meant to be held in a workshop-like format and step by step to the participants using live coding, supported by summarizing slides.
 
