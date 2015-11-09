@@ -1,6 +1,6 @@
 # Creative coding using openFrameworks - Workshop: An introduction to creative coding using openFrameworks.
 
-**NOTE from 09.11.2015**: This project source code is tested with openFrameworks 0.8.4. The full compatibility with openFrameworks 0.9.0 is not guaranteed. An updated version will be uploaded in the upcoming days.
+**openFrameworks version**: 0.9.0
 
 The purpose of the project is to illustrate and teach some basic drawing and interaction features of the creative coding toolkit [openFrameworks](http://openframeworks.cc). This activity is meant to be held in a workshop-like format and step by step to the participants using live coding, supported by summarizing slides.
 

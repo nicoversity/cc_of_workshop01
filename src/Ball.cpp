@@ -3,6 +3,8 @@
  *
  * Project: Creative coding using openFrameworks - Workshop: An introduction to creative coding using openFrameworks
  *
+ * Supported openFrameworks version: 0.9.0
+ *
  * Author: Nico Reski
  * Web: http://reski.nicoversity.com
  * Twitter: @nicoversity
@@ -26,7 +28,8 @@ void Ball::draw()
     // set color, apply color "fill" flag for shapes, and draw the ball (circle) at the designated position with the designated radius
     ofSetColor(color);
     ofFill();
-    ofCircle(x, y, radius);
+    // ofCircle(x, y, radius);  // OF version 0.8.4
+    ofDrawCircle(x, y, radius); // OF version 0.9.0
 }
 
 

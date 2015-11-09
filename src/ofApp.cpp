@@ -3,6 +3,8 @@
  *
  * Project: Creative coding using openFrameworks - Workshop: An introduction to creative coding using openFrameworks
  *
+ * Supported openFrameworks version: 0.9.0
+ *
  * Author: Nico Reski
  * Web: http://reski.nicoversity.com
  * Twitter: @nicoversity
