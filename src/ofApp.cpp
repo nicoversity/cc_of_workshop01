@@ -22,6 +22,9 @@ bool keyIsPressed;  // indicates, if currently a key is pressed
 //--------------------------------------------------------------
 void ofApp::setup(){
     
+    // initialize ball
+    ball.setup();
+    
     // initialize helper values
     movementStep = 4;
     radiusStep = 5;
@@ -87,10 +90,21 @@ void ofApp::keyPressed(int key){
     pressedKey = key;
     keyIsPressed = true;
     
+    /*
     // press spacebar (key code == 32): toggle between ball's moving state
     if (key == 32) {
         if (!ball.isFollowing) ball.isMoving = !ball.isMoving;   // toggle moving state back and forth between true and false, in case the ball is currently not following the mouse
     }
+    */
+    
+    // TO RUN IN THE BROWSER VIA EMSCRIPTEN
+    //
+    // not using SCAEBAR but the X key (120) on the keyboard
+    // press x (key code == 120): toggle between ball's moving state
+    if (key == 120) {
+        if (!ball.isFollowing) ball.isMoving = !ball.isMoving;   // toggle moving state back and forth between true and false, in case the ball is currently not following the mouse
+    }
+    
     
     // alternative keyboard input handler: using "switch" instead of "if"
     // increase/decrease the ball's radius by pressing 'w' or 's' on the keyboard

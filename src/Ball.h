@@ -33,6 +33,7 @@ public:
     
     Ball(); // "constructor", special function to create an object/instance of the class "Ball"
     
+    void setup();                               // initialize ball instance but setting its variables
     void draw();                                // draw the ball
     void moveTo(int xDestiny, int yDestiny);    // update position
     void applyRandomColor();                    // changes the ball's color randomly

@@ -14,6 +14,10 @@
 
 Ball::Ball()
 {
+}
+
+void Ball::setup()
+{
     x = ofRandom(ofGetWindowWidth());   // initial x position of the ball
     y = ofRandom(ofGetWindowHeight());  // initial y position of the ball
     radius = ofRandom(10, 50);          // initial radius of the ball
@@ -21,7 +25,6 @@ Ball::Ball()
     isMoving = false;                   // initial moving state
     isFollowing = false;                // initial following state
 }
-
 
 void Ball::draw()
 {
