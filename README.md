@@ -17,3 +17,7 @@ Following, a brief overview about the project's content is given in order as the
 9. Introduction of the *ofRandom()* function in order to randomize the initial position of the ball as well as randomly changing the color of the ball once it was clicked.
 
 In further preparation to this workshop, it is recommended to introduce the workshop participants to the very basics of the C++ programming language. In order to do so, a [brief introduction to C++](https://github.com/nicoversity/cplusplus_intro) has be created accordingly.
+
+
+## License
+MIT License, see [LICENSE.md](LICENSE.md)
