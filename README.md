@@ -11,7 +11,7 @@ Following, a brief overview about the project's content is given as it is illust
 3. Ball *movement* along the x-axis.
 4. Implementation of a *bouncing effect*, so the ball stays within the application window.
 5. Drawing some *application feedback*, such as FPS, the mouse's position as well as the currently pressed key, directly to the application's window.
-6. *Refactoring* of the ball instance's code into a seperate dedicated *class*.
+6. *Refactoring* of the ball instance's code into a separate dedicated *class*.
 7. *More keyboard input*: Increasing/decreasing the ball's radius.
 8. Implementation of the feature to let the ball *follow the mouse's position*, once the mouse *clicked* the ball.
 9. Introduction of the *ofRandom()* function in order to randomize the initial position of the ball as well as randomly changing the color of the ball once it was clicked.
