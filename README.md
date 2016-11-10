@@ -1,5 +1,7 @@
 # Creative coding using openFrameworks - Workshop: An introduction to creative coding using openFrameworks.
 
+**complementary slides**: [GitHub, 6.19 MB](https://github.com/nicoversity/slides/blob/master/workshops/cc_OF_01_introductionToOFAndCPP.pdf)
+
 **openFrameworks version**: 0.9.6
 
 The purpose of the project is to illustrate and teach some basic drawing and interaction features of the creative coding toolkit [openFrameworks](http://openframeworks.cc). This activity is meant to be held in a workshop-like format and step by step to the participants using live coding, supported by summarizing slides.
